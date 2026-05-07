@@ -1,0 +1,2 @@
+/usr/bin/ar qc libraft.a CMakeFiles/raft.dir/src/common/ErrorCode.cpp.o CMakeFiles/raft.dir/src/common/Lock.cpp.o CMakeFiles/raft.dir/src/common/Log.cpp.o CMakeFiles/raft.dir/src/common/Timestamp.cpp.o
+/usr/bin/ranlib libraft.a

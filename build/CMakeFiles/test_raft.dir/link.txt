@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -pthread CMakeFiles/test_raft.dir/test/test_raft.cpp.o -o test_raft  libraft.a 

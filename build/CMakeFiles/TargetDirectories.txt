@@ -1,0 +1,9 @@
+/home/sj/KVstorageBaseRaft/build/CMakeFiles/raft.dir
+/home/sj/KVstorageBaseRaft/build/CMakeFiles/test_raft.dir
+/home/sj/KVstorageBaseRaft/build/CMakeFiles/example.dir
+/home/sj/KVstorageBaseRaft/build/CMakeFiles/edit_cache.dir
+/home/sj/KVstorageBaseRaft/build/CMakeFiles/rebuild_cache.dir
+/home/sj/KVstorageBaseRaft/build/CMakeFiles/list_install_components.dir
+/home/sj/KVstorageBaseRaft/build/CMakeFiles/install.dir
+/home/sj/KVstorageBaseRaft/build/CMakeFiles/install/local.dir
+/home/sj/KVstorageBaseRaft/build/CMakeFiles/install/strip.dir
