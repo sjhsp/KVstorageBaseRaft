@@ -125,12 +125,27 @@ CMakeFiles/raft.dir/src/common/Timestamp.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/raft.dir/src/common/Timestamp.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sj/KVstorageBaseRaft/src/common/Timestamp.cpp -o CMakeFiles/raft.dir/src/common/Timestamp.cpp.s
 
+CMakeFiles/raft.dir/src/raftCore/Raft.cpp.o: CMakeFiles/raft.dir/flags.make
+CMakeFiles/raft.dir/src/raftCore/Raft.cpp.o: /home/sj/KVstorageBaseRaft/src/raftCore/Raft.cpp
+CMakeFiles/raft.dir/src/raftCore/Raft.cpp.o: CMakeFiles/raft.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/sj/KVstorageBaseRaft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/raft.dir/src/raftCore/Raft.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/raft.dir/src/raftCore/Raft.cpp.o -MF CMakeFiles/raft.dir/src/raftCore/Raft.cpp.o.d -o CMakeFiles/raft.dir/src/raftCore/Raft.cpp.o -c /home/sj/KVstorageBaseRaft/src/raftCore/Raft.cpp
+
+CMakeFiles/raft.dir/src/raftCore/Raft.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/raft.dir/src/raftCore/Raft.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sj/KVstorageBaseRaft/src/raftCore/Raft.cpp > CMakeFiles/raft.dir/src/raftCore/Raft.cpp.i
+
+CMakeFiles/raft.dir/src/raftCore/Raft.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/raft.dir/src/raftCore/Raft.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sj/KVstorageBaseRaft/src/raftCore/Raft.cpp -o CMakeFiles/raft.dir/src/raftCore/Raft.cpp.s
+
 # Object files for target raft
 raft_OBJECTS = \
 "CMakeFiles/raft.dir/src/common/ErrorCode.cpp.o" \
 "CMakeFiles/raft.dir/src/common/Lock.cpp.o" \
 "CMakeFiles/raft.dir/src/common/Log.cpp.o" \
-"CMakeFiles/raft.dir/src/common/Timestamp.cpp.o"
+"CMakeFiles/raft.dir/src/common/Timestamp.cpp.o" \
+"CMakeFiles/raft.dir/src/raftCore/Raft.cpp.o"
 
 # External object files for target raft
 raft_EXTERNAL_OBJECTS =
@@ -139,9 +154,10 @@ libraft.a: CMakeFiles/raft.dir/src/common/ErrorCode.cpp.o
 libraft.a: CMakeFiles/raft.dir/src/common/Lock.cpp.o
 libraft.a: CMakeFiles/raft.dir/src/common/Log.cpp.o
 libraft.a: CMakeFiles/raft.dir/src/common/Timestamp.cpp.o
+libraft.a: CMakeFiles/raft.dir/src/raftCore/Raft.cpp.o
 libraft.a: CMakeFiles/raft.dir/build.make
 libraft.a: CMakeFiles/raft.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/sj/KVstorageBaseRaft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libraft.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/sj/KVstorageBaseRaft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libraft.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/raft.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/raft.dir/link.txt --verbose=$(VERBOSE)
 

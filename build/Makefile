@@ -320,6 +320,30 @@ src/common/Timestamp.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/raft.dir/build.make CMakeFiles/raft.dir/src/common/Timestamp.cpp.s
 .PHONY : src/common/Timestamp.cpp.s
 
+src/raftCore/Raft.o: src/raftCore/Raft.cpp.o
+.PHONY : src/raftCore/Raft.o
+
+# target to build an object file
+src/raftCore/Raft.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raft.dir/build.make CMakeFiles/raft.dir/src/raftCore/Raft.cpp.o
+.PHONY : src/raftCore/Raft.cpp.o
+
+src/raftCore/Raft.i: src/raftCore/Raft.cpp.i
+.PHONY : src/raftCore/Raft.i
+
+# target to preprocess a source file
+src/raftCore/Raft.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raft.dir/build.make CMakeFiles/raft.dir/src/raftCore/Raft.cpp.i
+.PHONY : src/raftCore/Raft.cpp.i
+
+src/raftCore/Raft.s: src/raftCore/Raft.cpp.s
+.PHONY : src/raftCore/Raft.s
+
+# target to generate assembly for a file
+src/raftCore/Raft.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raft.dir/build.make CMakeFiles/raft.dir/src/raftCore/Raft.cpp.s
+.PHONY : src/raftCore/Raft.cpp.s
+
 test/test_raft.o: test/test_raft.cpp.o
 .PHONY : test/test_raft.o
 
@@ -374,6 +398,9 @@ help:
 	@echo "... src/common/Timestamp.o"
 	@echo "... src/common/Timestamp.i"
 	@echo "... src/common/Timestamp.s"
+	@echo "... src/raftCore/Raft.o"
+	@echo "... src/raftCore/Raft.i"
+	@echo "... src/raftCore/Raft.s"
 	@echo "... test/test_raft.o"
 	@echo "... test/test_raft.i"
 	@echo "... test/test_raft.s"

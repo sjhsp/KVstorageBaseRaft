@@ -2,6 +2,7 @@
 #include "../src/common/Timestamp.h"
 #include "../src/common/Lock.h"
 #include "../src/raftCore/RaftTypes.h"
+#include "../src/raftCore/Raft.h"
 #include <iostream>
 #include <thread>
 #include <chrono>
@@ -75,6 +76,44 @@ void test_raft_types() {
     std::cout << "Raft Types test passed!" << std::endl;
 }
 
+void test_raft() {
+    std::cout << "\n=== Testing Raft ===" << std::endl;
+    
+    RaftConfig config;
+    config.node_id = 1;
+    config.peer_ids = {2, 3};
+    config.storage_path = "./data";
+    config.election_timeout_ms = 150;
+    config.heartbeat_interval_ms = 50;
+    
+    // 创建目录
+    system("mkdir -p ./data");
+    
+    std::unique_ptr<Raft> raft = std::make_unique<Raft>(config);
+    
+    std::cout << "Raft node created, state: " << 
+        (raft->get_state() == NodeState::FOLLOWER ? "Follower" :
+         raft->get_state() == NodeState::CANDIDATE ? "Candidate" : "Leader") << std::endl;
+    
+    std::cout << "Current term: " << raft->get_current_term() << std::endl;
+    
+    // 测试选举
+    raft->start();
+    
+    std::cout << "Raft node started" << std::endl;
+    
+    // 等待选举超时
+    std::this_thread::sleep_for(std::chrono::milliseconds(200));
+    
+    std::cout << "After election timeout, state: " << 
+        (raft->get_state() == NodeState::FOLLOWER ? "Follower" :
+         raft->get_state() == NodeState::CANDIDATE ? "Candidate" : "Leader") << std::endl;
+    
+    raft->stop();
+    
+    std::cout << "Raft test passed!" << std::endl;
+}
+
 int main() {
     std::cout << "=== Starting Raft Project Tests ===\n" << std::endl;
     
@@ -82,6 +121,7 @@ int main() {
     test_timestamp();
     test_lock();
     test_raft_types();
+    test_raft();
     
     std::cout << "\n=== All tests passed! ===" << std::endl;
     return 0;

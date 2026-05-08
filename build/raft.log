@@ -2,3 +2,24 @@
 2026-05-07 18:02:39 [INFO] This is an info message
 2026-05-07 18:02:39 [WARN] This is a warning message
 2026-05-07 18:02:39 [ERROR] This is an error message
+2026-05-08 16:22:37 [DEBUG] This is a debug message
+2026-05-08 16:22:37 [DEBUG] 
+2026-05-08 16:22:37 [INFO] This is an info message
+2026-05-08 16:22:37 [INFO] 
+2026-05-08 16:22:37 [WARN] This is a warning message
+2026-05-08 16:22:37 [WARN] 
+2026-05-08 16:22:37 [ERROR] This is an error message
+2026-05-08 16:22:37 [ERROR] 
+2026-05-08 16:22:37 [INFO] Node_1 initialized
+2026-05-08 16:22:37 [INFO] Node_1 no existing state file, starting fresh
+2026-05-08 16:22:37 [INFO] Node_1 started as Follower
+2026-05-08 16:22:37 [INFO] Node_1 election timeout, term=0
+2026-05-08 16:22:37 [DEBUG] Node_1 state persisted
+2026-05-08 16:22:37 [INFO] Node_1 became Candidate, term=1
+2026-05-08 16:22:37 [INFO] Node_1 starting election, term=1
+2026-05-08 16:22:37 [DEBUG] Node_1 sending RequestVote to 2
+2026-05-08 16:22:37 [DEBUG] Node_1 sending RequestVote to 3
+2026-05-08 16:22:38 [DEBUG] Node_1 state persisted
+2026-05-08 16:22:38 [INFO] Node_1 stopped
+2026-05-08 16:22:38 [DEBUG] Node_1 state persisted
+2026-05-08 16:22:38 [INFO] Node_1 stopped

@@ -87,11 +87,20 @@ public:
     AutoLock(const AutoLock&) = delete;
     AutoLock& operator=(const AutoLock&) = delete;
 
+    LockType& get_lock() {
+        return lock_;
+    }
+
+    const LockType& get_lock() const {
+        return lock_;
+    }
+
 private:
     LockType& lock_;
 };
 
 // 条件变量
+template <typename LockType>
 class ConditionVariable {
 public:
     ConditionVariable() = default;
@@ -100,8 +109,8 @@ public:
     ConditionVariable(const ConditionVariable&) = delete;
     ConditionVariable& operator=(const ConditionVariable&) = delete;
 
-    void wait(std::mutex& mutex) {
-        cond_.wait(mutex);
+    void wait(AutoLock<LockType>& lock) {
+        cond_.wait(*(lock.get_lock().get_mutex()));
     }
 
     void notify_one() {
@@ -115,5 +124,8 @@ public:
 private:
     std::condition_variable_any cond_;
 };
+
+// 针对 MutexLock 的特化版本
+using ConditionVariableMutex = ConditionVariable<MutexLock>;
 
 #endif // LOCK_H

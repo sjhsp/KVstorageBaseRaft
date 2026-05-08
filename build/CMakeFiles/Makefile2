@@ -85,12 +85,12 @@ clean: CMakeFiles/example.dir/clean
 CMakeFiles/raft.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/raft.dir/build.make CMakeFiles/raft.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/raft.dir/build.make CMakeFiles/raft.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/sj/KVstorageBaseRaft/build/CMakeFiles --progress-num=3,4,5,6,7 "Built target raft"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/sj/KVstorageBaseRaft/build/CMakeFiles --progress-num=3,4,5,6,7,8 "Built target raft"
 .PHONY : CMakeFiles/raft.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/raft.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sj/KVstorageBaseRaft/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sj/KVstorageBaseRaft/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/raft.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sj/KVstorageBaseRaft/build/CMakeFiles 0
 .PHONY : CMakeFiles/raft.dir/rule
@@ -111,12 +111,12 @@ CMakeFiles/raft.dir/clean:
 CMakeFiles/test_raft.dir/all: CMakeFiles/raft.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_raft.dir/build.make CMakeFiles/test_raft.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_raft.dir/build.make CMakeFiles/test_raft.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/sj/KVstorageBaseRaft/build/CMakeFiles --progress-num=8,9 "Built target test_raft"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/sj/KVstorageBaseRaft/build/CMakeFiles --progress-num=9,10 "Built target test_raft"
 .PHONY : CMakeFiles/test_raft.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_raft.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sj/KVstorageBaseRaft/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sj/KVstorageBaseRaft/build/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_raft.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sj/KVstorageBaseRaft/build/CMakeFiles 0
 .PHONY : CMakeFiles/test_raft.dir/rule
@@ -142,7 +142,7 @@ CMakeFiles/example.dir/all: CMakeFiles/raft.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/example.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sj/KVstorageBaseRaft/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sj/KVstorageBaseRaft/build/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/example.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sj/KVstorageBaseRaft/build/CMakeFiles 0
 .PHONY : CMakeFiles/example.dir/rule
