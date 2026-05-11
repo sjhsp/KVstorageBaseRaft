@@ -217,6 +217,7 @@ RequestVoteReply Raft::request_vote(const RequestVoteArgs& args) {
     if (args.term > current_term_) {
         become_follower(args.term);
         reply.term = args.term;
+        return reply;
     }
     
     if (args.term < current_term_) {

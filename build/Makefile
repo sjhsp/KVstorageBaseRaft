@@ -320,6 +320,30 @@ src/common/Timestamp.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/raft.dir/build.make CMakeFiles/raft.dir/src/common/Timestamp.cpp.s
 .PHONY : src/common/Timestamp.cpp.s
 
+src/kvServer/KVServer.o: src/kvServer/KVServer.cpp.o
+.PHONY : src/kvServer/KVServer.o
+
+# target to build an object file
+src/kvServer/KVServer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raft.dir/build.make CMakeFiles/raft.dir/src/kvServer/KVServer.cpp.o
+.PHONY : src/kvServer/KVServer.cpp.o
+
+src/kvServer/KVServer.i: src/kvServer/KVServer.cpp.i
+.PHONY : src/kvServer/KVServer.i
+
+# target to preprocess a source file
+src/kvServer/KVServer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raft.dir/build.make CMakeFiles/raft.dir/src/kvServer/KVServer.cpp.i
+.PHONY : src/kvServer/KVServer.cpp.i
+
+src/kvServer/KVServer.s: src/kvServer/KVServer.cpp.s
+.PHONY : src/kvServer/KVServer.s
+
+# target to generate assembly for a file
+src/kvServer/KVServer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raft.dir/build.make CMakeFiles/raft.dir/src/kvServer/KVServer.cpp.s
+.PHONY : src/kvServer/KVServer.cpp.s
+
 src/raftCore/Raft.o: src/raftCore/Raft.cpp.o
 .PHONY : src/raftCore/Raft.o
 
@@ -398,6 +422,9 @@ help:
 	@echo "... src/common/Timestamp.o"
 	@echo "... src/common/Timestamp.i"
 	@echo "... src/common/Timestamp.s"
+	@echo "... src/kvServer/KVServer.o"
+	@echo "... src/kvServer/KVServer.i"
+	@echo "... src/kvServer/KVServer.s"
 	@echo "... src/raftCore/Raft.o"
 	@echo "... src/raftCore/Raft.i"
 	@echo "... src/raftCore/Raft.s"

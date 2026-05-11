@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/sj/KVstorageBaseRaft/src/common/Lock.cpp" "CMakeFiles/raft.dir/src/common/Lock.cpp.o" "gcc" "CMakeFiles/raft.dir/src/common/Lock.cpp.o.d"
   "/home/sj/KVstorageBaseRaft/src/common/Log.cpp" "CMakeFiles/raft.dir/src/common/Log.cpp.o" "gcc" "CMakeFiles/raft.dir/src/common/Log.cpp.o.d"
   "/home/sj/KVstorageBaseRaft/src/common/Timestamp.cpp" "CMakeFiles/raft.dir/src/common/Timestamp.cpp.o" "gcc" "CMakeFiles/raft.dir/src/common/Timestamp.cpp.o.d"
+  "/home/sj/KVstorageBaseRaft/src/kvServer/KVServer.cpp" "CMakeFiles/raft.dir/src/kvServer/KVServer.cpp.o" "gcc" "CMakeFiles/raft.dir/src/kvServer/KVServer.cpp.o.d"
   "/home/sj/KVstorageBaseRaft/src/raftCore/Raft.cpp" "CMakeFiles/raft.dir/src/raftCore/Raft.cpp.o" "gcc" "CMakeFiles/raft.dir/src/raftCore/Raft.cpp.o.d"
   )
 

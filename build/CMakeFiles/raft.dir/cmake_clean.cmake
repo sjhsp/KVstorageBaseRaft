@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/raft.dir/src/common/Log.cpp.o.d"
   "CMakeFiles/raft.dir/src/common/Timestamp.cpp.o"
   "CMakeFiles/raft.dir/src/common/Timestamp.cpp.o.d"
+  "CMakeFiles/raft.dir/src/kvServer/KVServer.cpp.o"
+  "CMakeFiles/raft.dir/src/kvServer/KVServer.cpp.o.d"
   "CMakeFiles/raft.dir/src/raftCore/Raft.cpp.o"
   "CMakeFiles/raft.dir/src/raftCore/Raft.cpp.o.d"
   "libraft.a"

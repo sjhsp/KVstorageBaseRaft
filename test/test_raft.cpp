@@ -3,6 +3,8 @@
 #include "../src/common/Lock.h"
 #include "../src/raftCore/RaftTypes.h"
 #include "../src/raftCore/Raft.h"
+#include "../src/kvServer/KVServer.h"
+#include "../src/skipList/SkipList.h"
 #include <iostream>
 #include <thread>
 #include <chrono>
@@ -11,10 +13,10 @@ void test_log() {
     std::cout << "=== Testing Log ===" << std::endl;
     Log::get_instance()->init("raft.log", LogLevel::DEBUG);
     
-    LOG_DEBUG("This is a debug message");
-    LOG_INFO("This is an info message");
-    LOG_WARN("This is a warning message");
-    LOG_ERROR("This is an error message");
+    LOG_DEBUG << "This is a debug message";
+    LOG_INFO << "This is an info message";
+    LOG_WARN << "This is a warning message";
+    LOG_ERROR << "This is an error message";
     
     std::cout << "Log test passed!" << std::endl;
 }
@@ -76,6 +78,66 @@ void test_raft_types() {
     std::cout << "Raft Types test passed!" << std::endl;
 }
 
+void test_skip_list() {
+    std::cout << "\n=== Testing SkipList ===" << std::endl;
+    
+    SkipList<int, std::string> skiplist(16);
+    
+    skiplist.insert(3, "three");
+    skiplist.insert(1, "one");
+    skiplist.insert(4, "four");
+    skiplist.insert(2, "two");
+    skiplist.insert(5, "five");
+    
+    std::string value;
+    if (skiplist.search(3, value)) {
+        std::cout << "Found key 3: " << value << std::endl;
+    }
+    
+    if (skiplist.search(10, value)) {
+        std::cout << "Found key 10: " << value << std::endl;
+    } else {
+        std::cout << "Key 10 not found" << std::endl;
+    }
+    
+    skiplist.remove(3);
+    
+    if (skiplist.search(3, value)) {
+        std::cout << "Found key 3 after remove: " << value << std::endl;
+    } else {
+        std::cout << "Key 3 not found after remove" << std::endl;
+    }
+    
+    std::cout << "SkipList size: " << skiplist.size() << std::endl;
+    
+    std::cout << "SkipList test passed!" << std::endl;
+}
+
+void test_kv_server() {
+    std::cout << "\n=== Testing KVServer ===" << std::endl;
+    
+    KVServer kv_server;
+    
+    kv_server.put("name", "Alice");
+    kv_server.put("age", "25");
+    kv_server.put("city", "Beijing");
+    
+    KvResult result1 = kv_server.get("name");
+    std::cout << "GET name: " << (result1.success ? result1.value : "failed") << std::endl;
+    
+    kv_server.put("name", "Bob");
+    KvResult result2 = kv_server.get("name");
+    std::cout << "GET name (updated): " << (result2.success ? result2.value : "failed") << std::endl;
+    
+    kv_server.remove("age");
+    KvResult result3 = kv_server.get("age");
+    std::cout << "GET age (after delete): " << (result3.success ? result3.value : "not found") << std::endl;
+    
+    std::cout << "KVServer size: " << kv_server.size() << std::endl;
+    
+    std::cout << "KVServer test passed!" << std::endl;
+}
+
 void test_raft() {
     std::cout << "\n=== Testing Raft ===" << std::endl;
     
@@ -86,7 +148,6 @@ void test_raft() {
     config.election_timeout_ms = 150;
     config.heartbeat_interval_ms = 50;
     
-    // 创建目录
     system("mkdir -p ./data");
     
     std::unique_ptr<Raft> raft = std::make_unique<Raft>(config);
@@ -97,12 +158,10 @@ void test_raft() {
     
     std::cout << "Current term: " << raft->get_current_term() << std::endl;
     
-    // 测试选举
     raft->start();
     
     std::cout << "Raft node started" << std::endl;
     
-    // 等待选举超时
     std::this_thread::sleep_for(std::chrono::milliseconds(200));
     
     std::cout << "After election timeout, state: " << 
@@ -115,12 +174,14 @@ void test_raft() {
 }
 
 int main() {
-    std::cout << "=== Starting Raft Project Tests ===\n" << std::endl;
+    std::cout << "=== Starting KVstorageBaseRaft Tests ===\n" << std::endl;
     
     test_log();
     test_timestamp();
     test_lock();
     test_raft_types();
+    test_skip_list();
+    test_kv_server();
     test_raft();
     
     std::cout << "\n=== All tests passed! ===" << std::endl;
